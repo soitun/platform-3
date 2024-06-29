@@ -136,15 +136,16 @@ abstract class Screen extends Controller
 
         $parameters = request()->collect()->merge([
             'state'   => $state,
-        ])->toArray();
+        ])->all();
 
         $repository = $this->callMethod($method, $parameters);
 
         if (is_array($repository)) {
-            $repository = new Repository($repository);
+            $repository = new Repository(array_merge($state->all(), $repository));
         }
 
-        $view = $this->view($repository)->fragments(collect($slug)->push('screen-state')->toArray());
+        $view = $this->view($repository)
+            ->fragments(collect($slug)->push('screen-state')->all());
 
         return response($view)
             ->header('Content-Type', 'text/vnd.turbo-stream.html');
@@ -218,6 +219,7 @@ abstract class Screen extends Controller
             'formValidateMessage'     => $this->formValidateMessage(),
             'needPreventsAbandonment' => $this->needPreventsAbandonment(),
             'state'                   => $this->serializeStateWithPublicProperties($repository),
+            'controller'              => $this->frontendController(),
         ]);
     }
 
@@ -497,5 +499,19 @@ abstract class Screen extends Controller
         $repository = new Repository($data);
 
         return back()->with('_state', $this->serializableState($repository));
+    }
+
+    /**
+     * Returns the name of the base Stimulus controller for the frontend.
+     *
+     * This method is used to determine the base Stimulus controller that will be
+     * utilized on the frontend of the application. The controller manages the
+     * behavior of UI elements, interacting with other components via Hotwire.
+     *
+     * @return string The name of the base controller.
+     */
+    public function frontendController(): string
+    {
+        return 'base';
     }
 }

@@ -15,15 +15,17 @@ use Orchid\Support\Init;
 /**
  * Class Attach.
  *
- * @method Attach   accept(string $value)
- * @method Attach   required($value = true)
- * @method Attach   multiple($value = true)
- * @method Attach   maxSize(int $value)
- * @method Attach   placeholder(string $value)
- * @method Attach   errorMaxSizeMessage(string $value)
- * @method Attach   errorTypeMessage(string $value)
- * @method CheckBox help(string $value = null)
- * @method CheckBox title(string $value = null)
+ * @method Attach accept(string $value)
+ * @method Attach required($value = true)
+ * @method Attach multiple($value = true)
+ * @method Attach maxSize(int $value)
+ * @method Attach placeholder(string $value)
+ * @method Attach errorMaxSizeMessage(string $value)
+ * @method Attach errorTypeMessage(string $value)
+ * @method Attach help(string $value = null)
+ * @method Attach title(string $value = null)
+ * @method Attach uploadUrl(string $value = null)
+ * @method Attach sortUrl(string $value = null)
  */
 class Attach extends Field
 {
@@ -46,6 +48,8 @@ class Attach extends Field
         'placeholder'         => 'Upload file',
         'errorMaxSizeMessage' => 'File ":name" is too large to upload',
         'errorTypeMessage'    => 'The attached file must be an image',
+        'uploadUrl'           => null,
+        'sortUrl'             => null,
     ];
 
     /**

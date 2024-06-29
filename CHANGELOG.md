@@ -5,6 +5,59 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 14.26.1 - 2024-06-30
+
+### Changed
+- Enhanced `zh_TW` language support [#2844](https://github.com/orchidsoftware/platform/pull/2844)
+
+### Fixed
+- Missing prefix for notification icon [#2848](https://github.com/orchidsoftware/platform/issues/2848)
+
+## 14.26.0 - 2024-06-14
+
+### Added
+- Support for XL size modal [#2842](https://github.com/orchidsoftware/platform/pull/2842)
+
+### Fixed
+- Adjusted `$type` modal positioning on the page [#2842](https://github.com/orchidsoftware/platform/pull/2842)
+
+## 14.25.3 - 2024-06-06
+
+### Fixed
+- Missing attributes for `Attach` field
+
+## 14.25.2 - 2024-06-01
+
+### Fixed
+- Updated rules for stubs to ensure correct behavior
+- Enhanced fieldset template for better usability
+- Visual enhancements to the Boolean component [#2838](https://github.com/orchidsoftware/platform/pull/2838)
+
+## 14.25.1 - 2024-05-30
+
+### Fixed
+- Incorrect merge state and data for async modals [#2658](https://github.com/orchidsoftware/platform/issues/2658)
+
+## 14.25.0 - 2024-05-30
+
+### Added
+- Improved `ModalToggle` declaration second argument for `modal` method
+
+### Fixed
+- Missed state when update async modals [#2658](https://github.com/orchidsoftware/platform/issues/2658)
+
+## 14.24.0 - 2024-05-27
+
+### Added
+- Add frontend controller in screen. [#2835](https://github.com/orchidsoftware/platform/pull/2835)
+
+### Changed
+- Remove subtitle Orchid on header
+- `Attach` field allow to set custom url endpoint for upload and sort
+
+### Removed
+- EventServiceProvider [#2834](https://github.com/orchidsoftware/platform/pull/2834)
+
 ## 14.23.1 - 2024-05-04
 
 ### Fixed
